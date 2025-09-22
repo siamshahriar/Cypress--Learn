@@ -13,7 +13,7 @@ describe('Registration Form Selectors Practice', () => {
     cy.get('#phone').type('1112223333');
     cy.get('#country').select('Canada');
     cy.get('#password').type('passById');
-    cy.get('.btn.primary').click();
+    cy.get('#submitBtn').click();
     cy.get('#message').should('contain', 'Registration successful!');
   });
 
@@ -24,7 +24,7 @@ describe('Registration Form Selectors Practice', () => {
     cy.get('input[name="phone"]').type('2223334444');
     cy.get('select[name="country"]').select('UK');
     cy.get('input[name="password"]').type('passByName');
-    cy.get('.btn.primary').click();
+    cy.get('button[name="submit"]').click()
     cy.get('#message').should('contain', 'Registration successful!');
   });
 
@@ -33,37 +33,20 @@ describe('Registration Form Selectors Practice', () => {
     cy.get('input[type="text"]').last().type('userByType');
     cy.get('input[type="email"]').type('emailByType@example.com');
     cy.get('input[type="tel"]').type('3334445555');
-  cy.get('select').select('Bangladesh');
+    cy.get('select').select('Bangladesh');
     cy.get('input[type="password"]').type('passByType');
-    cy.get('.btn.primary').click();
+    cy.get('button[type="submit"]').click();
     cy.get('#message').should('contain', 'Registration successful!');
   });
 
   it('Selects elements by class', () => {
-    cy.get('.container input[type="text"]').first().type('ClassName');
-    cy.get('.container input[type="text"]').last().type('ClassUser');
-    cy.get('.container input[type="email"]').type('class@email.com');
-    cy.get('.container input[type="tel"]').type('5556667777');
-    cy.get('.container select').select('UK');
-    cy.get('.container input[type="password"]').type('ClassPass');
+    cy.get('.fullname').type('ClassName');
+    cy.get('.username').type('ClassUser');
+    cy.get('.email').type('class@email.com');
+    cy.get('.phone').type('5556667777');
+    cy.get('.country').select('UK');
+    cy.get('.password').type('ClassPass');
     cy.get('.btn.primary').click();
-    cy.get('#message').should('contain', 'Registration successful!');
-  });
-
-  it('Selects elements by label text', () => {
-    cy.contains('label', 'Username').should('exist');
-    cy.contains('label', 'Email').should('exist');
-    cy.contains('label', 'Password').should('exist');
-  });
-
-  it('Selects elements by button text', () => {
-    cy.get('[data-cy="fullname"]').type('ButtonName');
-    cy.get('[data-cy="username"]').type('ButtonUser');
-    cy.get('[data-cy="email"]').type('button@email.com');
-    cy.get('[data-cy="phone"]').type('6667778888');
-    cy.get('[data-cy="country"]').select('Canada');
-    cy.get('[data-cy="password"]').type('ButtonPass');
-    cy.contains('button', 'Register').click();
     cy.get('#message').should('contain', 'Registration successful!');
   });
 

@@ -11,30 +11,30 @@
     <h2 id="form-title">Register</h2>
     <form id="registrationForm">
       <label for="fullname">Full Name</label>
-      <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required data-cy="fullname">
+      <input type="text" id="fullname" name="fullname" class="fullname" placeholder="Enter full name" required data-cy="fullname">
 
       <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter username" required data-cy="username">
+      <input type="text" id="username" name="username" class="username" placeholder="Enter username" required data-cy="username">
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter email" required data-cy="email">
+      <input type="email" id="email" name="email" class="email" placeholder="Enter email" required data-cy="email">
 
       <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required data-cy="phone">
+      <input type="tel" id="phone" name="phone" class="phone" placeholder="Enter phone number" required data-cy="phone">
 
       <label for="country">Country</label>
-      <select id="country" name="country" required data-cy="country">
+      <select id="country" name="country" class="country" required data-cy="country">
         <option value="">Select country</option>
         <option value="USA">USA</option>
         <option value="Canada">Canada</option>
         <option value="UK">UK</option>
-  <option value="Bangladesh">Bangladesh</option>
+        <option value="Bangladesh">Bangladesh</option>
       </select>
 
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter password" required data-cy="password">
+      <input type="password" id="password" name="password" class="password" placeholder="Enter password" required data-cy="password">
 
-      <button type="submit" id="submitBtn" class="btn primary" data-cy="submit-login">Register</button>
+      <button type="submit" name="submit" id="submitBtn" class="btn primary" data-cy="submit-login">Register</button>
     </form>
     <div id="message"></div>
   </div>
